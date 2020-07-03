@@ -6,15 +6,18 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "dotenv": "^8.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "selenium-webdriver": "^4.0.0-alpha.7",
+    "winston": "^3.3.3",
+    "winston-elasticsearch": "^0.9.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test:build": "DOTENV_CONFIG_PATH=./.env.build node -r dotenv/config ./node_modules/react-scripts/bin/react-scripts.js test ./src",
+    "test:dev": "DOTENV_CONFIG_PATH=./.env node -r dotenv/config ./node_modules/react-scripts/bin/react-scripts.js test ./src",
+    "test:test": "DOTENV_CONFIG_PATH=./.env.test node -r dotenv/config ./node_modules/react-scripts/bin/react-scripts.js test ./src"
   },
   "eslintConfig": {
     "extends": "react-app"
